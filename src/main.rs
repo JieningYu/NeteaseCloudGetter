@@ -91,7 +91,7 @@ fn main() {
                 exit(1)
             }
 
-            exit(if errored { 0 } else { 1 })
+            exit(if errored { 1 } else { 0 })
         }
     }
 
@@ -119,7 +119,7 @@ trait TrackAccess {
             .read_line(&mut input)
             .expect("Failed to read line.");
 
-        if input.eq_ignore_ascii_case("Y") {
+        if input.contains("Y") || input.contains("y") {
             for music in &tracks {
                 i += 1;
                 match File::create(format!("{}.mp3", &music.name)) {
