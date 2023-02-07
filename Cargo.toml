@@ -1,0 +1,9 @@
+[package]
+name = "netease_cloud_getter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "0.11.14", features = ["blocking"] }
+serde = "1.0.152"
+serde_json = "1.0.92"
